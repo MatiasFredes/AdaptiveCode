@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30523.141
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserInterface", "RefactoringAccount\UserInterface.csproj", "{630EE9C2-C31B-4D41-8F7F-826A28540B1F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{621F8CF8-4DB6-42E4-B838-960151A8EC6A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{A2BCF836-7667-45FB-A442-195C282B1B41}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{630EE9C2-C31B-4D41-8F7F-826A28540B1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{630EE9C2-C31B-4D41-8F7F-826A28540B1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{630EE9C2-C31B-4D41-8F7F-826A28540B1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{630EE9C2-C31B-4D41-8F7F-826A28540B1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{621F8CF8-4DB6-42E4-B838-960151A8EC6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{621F8CF8-4DB6-42E4-B838-960151A8EC6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{621F8CF8-4DB6-42E4-B838-960151A8EC6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{621F8CF8-4DB6-42E4-B838-960151A8EC6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2BCF836-7667-45FB-A442-195C282B1B41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2BCF836-7667-45FB-A442-195C282B1B41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2BCF836-7667-45FB-A442-195C282B1B41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2BCF836-7667-45FB-A442-195C282B1B41}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DEB9CA9F-AC42-41F4-96A3-CBB27D621A0D}
+	EndGlobalSection
+EndGlobal
