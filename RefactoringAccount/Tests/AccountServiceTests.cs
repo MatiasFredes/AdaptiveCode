@@ -11,11 +11,19 @@ namespace Tests
     [TestClass]
     public class AccountServiceTests
     {
+        private IAccountFactory accountFactory;
+
+        [TestInitialize]
+        public void Init()
+        {
+            accountFactory = new AccountFactory();
+        }
+
         [TestMethod]
         public void CalculateRewardPoints_GivenAnAmountOf100ForSilverAccount_Return10Points()
         {
             //Arrange
-            var account = Account.CreateAccount(AccountType.Silver);
+            var account = accountFactory.CreateAccount(AccountType.Silver);
 
             //Act
             var actual = account.CalculateRewardPoints(100);
@@ -28,7 +36,7 @@ namespace Tests
         public void CalculateRewardPoints_GivenAnAmountOf100ForGoldAccount_Return20Points()
         {
             //Arrange
-            var account = Account.CreateAccount(AccountType.Gold);
+            var account = accountFactory.CreateAccount(AccountType.Gold);
 
             //Act
             var actual = account.CalculateRewardPoints(100);
@@ -41,7 +49,7 @@ namespace Tests
         public void CalculateRewardPoints_GivenAnAmountOf100ForGoldAccountThatHasBalanceOf100_Return20Points()
         {
             //Arrange
-            var account = Account.CreateAccount(AccountType.Gold);
+            var account = accountFactory.CreateAccount(AccountType.Gold);
             account.AddTransaction(100);
             
             //Act
@@ -55,7 +63,7 @@ namespace Tests
         public void CalculateRewardPoints_GivenAnAmountOf100ForPlatinumAccountThatHasBalanceOf100_Return51Points()
         {
             //Arrange
-            var account = Account.CreateAccount(AccountType.Platinum);
+            var account = accountFactory.CreateAccount(AccountType.Platinum);
             account.AddTransaction(100);
 
             //Act
