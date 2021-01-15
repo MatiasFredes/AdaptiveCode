@@ -15,7 +15,7 @@ namespace Tests
         public void CalculateRewardPoints_GivenAnAmountOf100ForSilverAccount_Return10Points()
         {
             //Arrange
-            var account = new SilverAccount();
+            var account = Account.CreateAccount(AccountType.Silver);
 
             //Act
             var actual = account.CalculateRewardPoints(100);
@@ -28,7 +28,7 @@ namespace Tests
         public void CalculateRewardPoints_GivenAnAmountOf100ForGoldAccount_Return20Points()
         {
             //Arrange
-            var account = new GoldAccount();
+            var account = Account.CreateAccount(AccountType.Gold);
 
             //Act
             var actual = account.CalculateRewardPoints(100);
@@ -41,7 +41,7 @@ namespace Tests
         public void CalculateRewardPoints_GivenAnAmountOf100ForGoldAccountThatHasBalanceOf100_Return20Points()
         {
             //Arrange
-            var account = new GoldAccount();
+            var account = Account.CreateAccount(AccountType.Gold);
             account.AddTransaction(100);
             
             //Act
@@ -55,7 +55,7 @@ namespace Tests
         public void CalculateRewardPoints_GivenAnAmountOf100ForPlatinumAccountThatHasBalanceOf100_Return51Points()
         {
             //Arrange
-            var account = new PlatinumAccount();
+            var account = Account.CreateAccount(AccountType.Platinum);
             account.AddTransaction(100);
 
             //Act
