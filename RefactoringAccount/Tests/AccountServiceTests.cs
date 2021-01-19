@@ -15,7 +15,7 @@ namespace Tests
         public void CalculateRewardPoints_GivenAnAmountOf100ForSilverAccount_Return10Points()
         {
             //Arrange
-            var account = new Account(AccountType.Silver);
+            var account = new SilverAccount();
 
             //Act
             var actual = account.CalculateRewardPoints(100);
@@ -28,7 +28,7 @@ namespace Tests
         public void CalculateRewardPoints_GivenAnAmountOf100ForGoldAccount_Return20Points()
         {
             //Arrange
-            var account = new Account(AccountType.Gold);
+            var account = new GoldAccount();
 
             //Act
             var actual = account.CalculateRewardPoints(100);
@@ -41,11 +41,11 @@ namespace Tests
         public void CalculateRewardPoints_GivenAnAmountOf100ForGoldAccountThatHasBalanceOf100_Return20Points()
         {
             //Arrange
-            var account = new Mock<Account>(AccountType.Gold);
-            account.Setup(a => a.Balance).Returns(100);
-
+            var account = new GoldAccount();
+            account.AddTransaction(100);
+            
             //Act
-            var actual = account.Object.CalculateRewardPoints(100);
+            var actual = account.CalculateRewardPoints(100);
 
             // Assert
             Assert.AreEqual(20, actual);
@@ -55,11 +55,11 @@ namespace Tests
         public void CalculateRewardPoints_GivenAnAmountOf100ForPlatinumAccountThatHasBalanceOf100_Return51Points()
         {
             //Arrange
-            var account = new Mock<Account>(AccountType.Platinum);
-            account.Setup(a => a.Balance).Returns(100);
+            var account = new PlatinumAccount();
+            account.AddTransaction(100);
 
             //Act
-            var actual = account.Object.CalculateRewardPoints(100);
+            var actual = account.CalculateRewardPoints(100);
 
             // Assert
             Assert.AreEqual(51, actual);
